@@ -8,59 +8,6 @@ import routes from "./routes";
 
 const app = express();
 
-// mongoose
-//   .connect(config.mongo.url)
-//   .then(() => {
-//     console.log("Mongo connected");
-//     startServer();
-//   })
-//   .catch((error: any) => {
-//     console.log(error);
-//   });
-
-// // start the server after mongo connects
-// const startServer = () => {
-//   router.use(express.urlencoded({ extended: true }));
-//   router.use(express.json());
-
-//   router.use((req, res, next) => {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header(
-//       "Access-Control-Allow-Headers",
-//       "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
-//     );
-//     if (req.method == "OPTIONS") {
-//       res.header(
-//         "Access-Control-Allow-Methods",
-//         "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-//       );
-//     }
-
-//     next();
-//   });
-
-//   router.use("/users", userRouter);
-//   router.use("/blog", blogPostRouter);
-
-//   //   route check
-//   router.get("/", (req, res, next) =>
-//     res.status(200).json({ message: "service running" })
-//   );
-
-//   //   route error
-//   router.use((req, res, next) => {
-//     const error = new Error("route not found");
-//     console.log(error);
-//     return res.status(400).json({ message: error.message });
-//   });
-
-//   http
-//     .createServer(router)
-//     .listen(config.server.port, () =>
-//       console.log(`Server running on port ${config.server.port}.`)
-//     );
-// };
-
 class ExpressServer {
   constructor() {
     app.use(
